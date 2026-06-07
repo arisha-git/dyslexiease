@@ -1,0 +1,224 @@
+.kids-page {
+  min-height: 100vh;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* Background blobs */
+.deco-blob {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating letters */
+.floating-letter {
+  position: absolute;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  pointer-events: none;
+  z-index: 0;
+  animation: float 5s ease-in-out infinite;
+  opacity: 0.55;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Inner layout */
+.kids-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 24px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Hero row */
+.kids-hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.kids-hero-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 460px;
+}
+
+.kids-hero-text h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.kids-accent { color: var(--c-purple); }
+
+.kids-hero-text p {
+  font-family: 'Lexend', sans-serif;
+  font-size: 17px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.kids-hero-art {
+  flex-shrink: 0;
+  animation: float 5s ease-in-out infinite;
+  filter: drop-shadow(0 16px 32px rgba(139,92,246,0.15));
+}
+
+.kid-illustration {
+  width: 220px;
+  height: 260px;
+}
+
+/* Message block */
+.kids-message {
+  display: flex;
+  gap: 0;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.kids-message-accent {
+  width: 6px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, var(--c-purple) 0%, var(--c-blue) 100%);
+}
+
+.kids-message-body {
+  padding: 36px 36px 36px 32px;
+}
+
+.kids-message-body h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.kids-message-body p {
+  font-family: 'Lexend', sans-serif;
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.kids-message-body p:last-child { margin-bottom: 0; }
+
+/* Tools */
+.kids-tools-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.kids-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.ktc {
+  background: white;
+  border-radius: 22px;
+  padding: 26px 22px 22px;
+  border: 1.5px solid #F3F4F6;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ktc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ktc-bg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.ktc:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.1);
+  border-color: var(--ktc-bg);
+}
+
+.ktc:hover::before { opacity: 0.4; }
+
+.ktc-shape {
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+}
+
+.ktc h3 {
+  position: relative;
+  z-index: 1;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+
+.ktc p {
+  position: relative;
+  z-index: 1;
+  font-family: 'Lexend', sans-serif;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.ktc-arrow {
+  position: relative;
+  z-index: 1;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ktc-a);
+}
+
+/* Closing note */
+.kids-note {
+  font-family: 'Lexend', sans-serif;
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 540px;
+  border-top: 1px solid #F3F4F6;
+  padding-top: 28px;
+}
+
+@media (max-width: 600px) {
+  .kids-hero-art { display: none; }
+  .floating-letter { display: none; }
+}

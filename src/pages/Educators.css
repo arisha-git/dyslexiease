@@ -1,0 +1,249 @@
+.educators-page {
+  min-height: 100vh;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.educators-deco-blob {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.educators-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 52px 24px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+/* ── Hero ── */
+.educators-hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.educators-hero-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 440px;
+}
+
+.educators-hero-text h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: clamp(30px, 5vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.educators-accent {
+  background: linear-gradient(90deg, #EA580C, #F97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.educators-hero-text p {
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 400px;
+}
+
+.educators-hero-art {
+  flex-shrink: 0;
+  filter: drop-shadow(0 16px 32px rgba(234,88,12,0.12));
+}
+
+.educators-illustration {
+  width: 380px;
+  height: 280px;
+}
+
+/* Student head animation — looks up at board, then down to write, loops */
+.student-head-group {
+  transform-origin: 318px 130px;
+  animation: studentLook 4s ease-in-out infinite;
+}
+
+@keyframes studentLook {
+  0%   { transform: rotate(0deg); }    /* looking at board */
+  15%  { transform: rotate(0deg); }
+  35%  { transform: rotate(18deg); }   /* head tilts down to write */
+  65%  { transform: rotate(18deg); }   /* writing */
+  80%  { transform: rotate(0deg); }    /* looks back up */
+  100% { transform: rotate(0deg); }
+}
+
+/* ── Sections ── */
+.educators-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.educators-section-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #EA580C;
+}
+
+/* Stat row */
+.educators-stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.educators-stat-card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  border: 1.5px solid #FED7AA;
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+.educators-stat-card:hover { transform: translateY(-4px); }
+
+.esc-num {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #EA580C, #F97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+}
+
+.esc-label {
+  font-family: 'Lexend', sans-serif;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* What block */
+.educators-what {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: white;
+  border-radius: 20px;
+  padding: 28px 28px 28px 0;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.educators-what-bar {
+  width: 6px;
+  min-height: 100%;
+  align-self: stretch;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #EA580C 0%, #F97316 100%);
+  border-radius: 0;
+}
+
+.educators-what p,
+.educators-closing p {
+  font-family: 'Lexend', sans-serif;
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  padding-left: 4px;
+}
+
+/* Strategies grid */
+.educators-strategies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.educators-strategy-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px 22px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1.5px solid #F3F4F6;
+  transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  position: relative;
+  overflow: hidden;
+}
+
+.educators-strategy-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #EA580C, #F97316);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.educators-strategy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(234,88,12,0.09);
+  border-color: #FED7AA;
+}
+.educators-strategy-card:hover::after { opacity: 1; }
+
+.estr-num {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  color: #EA580C;
+  opacity: 0.5;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.educators-strategy-card h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.educators-strategy-card p {
+  font-family: 'Lexend', sans-serif;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Closing */
+.educators-closing {
+  display: flex;
+  gap: 0;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  padding: 28px 28px 28px 0;
+}
+
+@media (max-width: 600px) {
+  .educators-hero-art { display: none; }
+  .educators-illustration { width: 300px; height: 220px; }
+}
