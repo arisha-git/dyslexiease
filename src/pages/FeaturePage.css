@@ -1,0 +1,61 @@
+/* ===== SHARED FEATURE PAGE STYLES ===== */
+.feature-page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* Hero */
+.fp-hero {
+  position: relative;
+  background: var(--hero-color, #DBEAFE);
+  padding: 60px 24px 48px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.fp-hero-blob {
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  animation: blobFloat 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.fp-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.fp-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+  animation: float 4s ease-in-out infinite;
+  display: inline-block;
+}
+
+.fp-hero h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 48px);
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.fp-hero p {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Body */
+.fp-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
