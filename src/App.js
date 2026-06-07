@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MagicCursor from './components/MagicCursor';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Landing from './pages/Landing';
@@ -13,6 +14,7 @@ import Educators from './pages/Educators';
 export default function App() {
   return (
     <BrowserRouter>
+      <MagicCursor />
       <Navbar />
       <Routes>
         <Route path="/" element={<Landing />} />

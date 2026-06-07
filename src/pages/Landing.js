@@ -121,18 +121,21 @@ export default function Landing() {
         <div className="illus-strip-inner">
           <IllusBlock
             img="https://i.pinimg.com/736x/fa/be/62/fabe624e42e75abf027078f927bcc601.jpg"
-            title="Kids love learning"
+            title="Educators/Teachers"
             color="#DBEAFE"
+            to="/educators"
           />
           <IllusBlock
             img="https://img.magnific.com/premium-vector/three-preschool-kids-sitting-floor-learning-together_79217-424.jpg"
-            title="Every child can read"
+            title="Children"
             color="#EDE9FE"
+            to="/kids"
           />
           <IllusBlock
             img="https://img.freepik.com/free-vector/children-doing-experiment-vector-educational-flat-graphic_53876-105793.jpg"
-            title="Tools that really help"
+            title="Parents/Guardians"
             color="#D1FAE5"
+            to="/parents"
           />
         </div>
       </section>
@@ -177,14 +180,14 @@ function StatPill({ num, label }) {
   );
 }
 
-function IllusBlock({ img, title, color }) {
+function IllusBlock({ img, title, color, to }) {
   return (
-    <div className="illus-block" style={{ '--block-color': color }}>
+    <Link to={to} className="illus-block" style={{ '--block-color': color }}>
       <div className="illus-block-img">
         <img src={img} alt={title} loading="lazy" />
       </div>
       <p>{title}</p>
-    </div>
+    </Link>
   );
 }
 
